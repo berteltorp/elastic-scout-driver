@@ -5,7 +5,7 @@ namespace ElasticScoutDriver\Factories;
 use ElasticAdapter\Search\Hit;
 use ElasticAdapter\Search\SearchResponse;
 use Illuminate\Database\Eloquent\Collection;
-use App\Model;
+use App\Model\Document;
 use Laravel\Scout\Builder;
 
 final class ModelFactory implements ModelFactoryInterface
@@ -23,10 +23,10 @@ final class ModelFactory implements ModelFactoryInterface
         $documentIdPositions = array_flip($documentIds);
 
         return $builder->model->getScoutModelsByIds($builder, $documentIds)
-            ->filter(static function (Model $model) use ($documentIds) {
+            ->filter(static function (Document $model) use ($documentIds) {
                 return in_array($model->getScoutKey(), $documentIds);
             })
-            ->sortBy(static function (Model $model) use ($documentIdPositions) {
+            ->sortBy(static function (Document $model) use ($documentIdPositions) {
                 return $documentIdPositions[$model->getScoutKey()];
             })
             ->values();
