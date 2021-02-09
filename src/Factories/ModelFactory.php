@@ -5,7 +5,7 @@ namespace ElasticScoutDriver\Factories;
 use ElasticAdapter\Search\Hit;
 use ElasticAdapter\Search\SearchResponse;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
+use App\Model;
 use Laravel\Scout\Builder;
 
 final class ModelFactory implements ModelFactoryInterface
