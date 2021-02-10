@@ -4,7 +4,7 @@ namespace ElasticScoutDriver\Factories;
 
 use ElasticAdapter\Documents\Document;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
-use App\Model;
+use App\Model\Document as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection as BaseCollection;
 use UnexpectedValueException;
